@@ -4,6 +4,12 @@ module "azurerm_resource_group" {
   rg_location = "West US"
 }
 
+module "azurerm_resource_group" {
+  source      = "../Modules/azurerm_resouce_group"
+  rg_name     = "RG-india"
+  rg_location = "East US"
+}
+
 module "azurerm_virtual_network" {
   depends_on = [module.azurerm_resource_group]
 
